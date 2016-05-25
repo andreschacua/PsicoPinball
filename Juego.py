@@ -38,6 +38,11 @@ triangulo2 = v.create_polygon((470, 750, 520, 650, 570, 750), fill="green")
 pinza1 = v.create_rectangle(120, 710, 200, 700, outline='black', fill='gray') #pinza lado izquierdo
 pinza2 = v.create_rectangle(420, 710, 500, 700, outline='black', fill='gray') #pinza lado derecho
 
+obstaculo1 = v.create_oval(50, 100, 150, 200, fill = "brown") # bola
+obstaculo2 = v.create_oval(70, 125, 125, 175, fill = "orange") # bola
+
+triangulo3 = v.create_polygon((50, 750, 100, 650, 150, 750), fill="green")
+
 
     ############ BOTONES ###############
 
