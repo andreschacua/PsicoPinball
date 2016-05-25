@@ -3,7 +3,7 @@ import time
 
 juego = Tk()
 
-juego.resizable(0,0) # Evita que la ventana se pueda cambiar de tamaño
+#juego.resizable(0,0) # Evita que la ventana se pueda cambiar de tamaño
 
 juego.title('PsicoPinball')#titulo de la ventana
 
@@ -41,7 +41,8 @@ pinza2 = v.create_rectangle(420, 710, 500, 700, outline='black', fill='gray') #p
 obstaculo1 = v.create_oval(50, 100, 150, 200, fill = "brown") # bola
 obstaculo2 = v.create_oval(70, 125, 125, 175, fill = "orange") # bola
 
-triangulo3 = v.create_polygon((50, 750, 100, 650, 150, 750), fill="green")
+triangulo3 = v.create_polygon((0, 0, 0, 50, 100, 0), outline='black', fill="red")
+triangulo4 = v.create_polygon((600, 0, 600, 50, 700, 10), outline='black', fill="red")
 
 
     ############ BOTONES ###############
