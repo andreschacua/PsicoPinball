@@ -31,6 +31,8 @@ linea1 = v.create_line(590, 150, 590, 800)
 linea2 = v.create_line(635, 0, 635, 800)
 
 bola = v.create_oval(600, 700, 625, 725, fill = "gray") # bola
+pinza1 = v.create_rectangle(120, 710, 200, 700, outline='black', fill='gray') #pinza lado izquierdo
+pinza2 = v.create_rectangle(420, 710, 500, 700, outline='black', fill='gray') #pinza lado derecho
 
 
     ############ BOTONES ###############
