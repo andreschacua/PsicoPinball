@@ -12,16 +12,16 @@ v.pack()
 
     ################ FONDO ###############
 
-imfondo = PhotoImage(file = 'C:/Users/123456/Documents/Universidad/Programacion/Proyecto/Fondo.gif')
+imfondo = PhotoImage(file = 'Fondo.gif')
 v.create_image(0,0, image = imfondo, anchor = NW)
 
-fondogris = PhotoImage(file = 'C:/Users/123456/Documents/Universidad/Programacion/Proyecto/fondo gris.gif')
+fondogris = PhotoImage(file = 'fondo gris.gif')
 v.create_image(635,0, image = fondogris, anchor = NW)
 
-logo = PhotoImage(file = 'C:/Users/123456/Documents/Universidad/Programacion/Proyecto/Logo.gif')
+logo = PhotoImage(file = 'Logo.gif')
 v.create_image(730,40, image = logo, anchor = NW)
 
-tomate = PhotoImage(file = 'C:/Users/123456/Documents/Universidad/Programacion/Proyecto/Tomate.gif')
+tomate = PhotoImage(file = 'Tomate.gif')
 v.create_image(670,300, image = tomate, anchor = NW)
 
 
@@ -53,13 +53,15 @@ guardar = Button(v,text="Guardar Partida", bg = "gray", font = ("Arial Rounded M
 
 for x in range (50):
 
-    y = 11
+    
+    y = 1
     x = 0
 
-    time.sleep(0.025)
-    v.move(bola, x, -y)
-    v.update()
-
-
+    while (y > 0):
+        time.sleep(0.05)
+        v.move(bola, x, -y)
+        v.update()
+        y = y + 1
+    
 
 juego.mainloop()
