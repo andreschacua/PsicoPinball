@@ -31,6 +31,10 @@ linea1 = v.create_line(590, 150, 590, 800)
 linea2 = v.create_line(635, 0, 635, 800)
 
 bola = v.create_oval(600, 700, 625, 725, fill = "gray") # bola
+
+triangulo1 = v.create_polygon((50, 750, 100, 650, 150, 750), fill="green")
+triangulo2 = v.create_polygon((470, 750, 520, 650, 570, 750), fill="green")
+
 pinza1 = v.create_rectangle(120, 710, 200, 700, outline='black', fill='gray') #pinza lado izquierdo
 pinza2 = v.create_rectangle(420, 710, 500, 700, outline='black', fill='gray') #pinza lado derecho
 
@@ -39,7 +43,7 @@ pinza2 = v.create_rectangle(420, 710, 500, 700, outline='black', fill='gray') #p
 
 guardar = Button(v,text="Guradar Partida", bg = "gray", font = ("Arial Rounded MT Bold", 15)). place(x = 750, y = 600)
 
-    ############# MOVER#####################
+    ############# MOVER #####################
 
 for x in range (50):
 
