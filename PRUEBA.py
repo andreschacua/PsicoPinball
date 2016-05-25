@@ -1,17 +1,43 @@
+from tkinter import *
 
-import tkinter as tk
-import time
-root = tk.Tk()
-canvas = tk.Canvas(root, width=400, height=400)
-canvas.pack()
-# canvas.create_rectangle(x0, y0, x1, y1, option, ... )
-# x0, y0, x1, y1 are corner coordinates of ulc to lrc diagonal
-rc1 = canvas.create_rectangle(20, 260, 120, 360, outline='white', fill='blue')
-rc2 = canvas.create_rectangle(20, 10, 120, 110, outline='white', fill='red')
-for x in range(50):
-    y = x = 5
-    time.sleep(0.025)
-    canvas.move(rc1, x, -y)
-    canvas.move(rc2, x, y)
-    canvas.update()
-root.mainloop()
+import math
+
+c = Canvas(width=200, height=200)
+c.pack()
+
+# una figura , recordar solo se pueden cosas como poligonos y lineas
+xy = [(50, 50), (50, 80), (150, 150),(180,150)]
+
+polygon_item = c.create_polygon(xy)
+
+center = 50, 50 # lugar inicial para parametro
+
+def getangle(event):
+    dx = c.canvasx(event.x) - center[0]
+    dy = c.canvasy(event.y) - center[1]
+    try:
+        return complex(dx, dy) / abs(complex(dx, dy))
+    except ZeroDivisionError:
+        return 0.0 # cannot determine angle
+
+def press(event):
+    # calculate angle at start point
+    global start
+    start = getangle(event)
+
+def motion(event):
+    # calculate current angle relative to initial angle
+    global start
+    angle = getangle(event) / start
+    offset = complex(center[0], center[1])
+    newxy = []
+    for x, y in xy:
+        v = angle * (complex(x, y) - offset) + offset
+        newxy.append(v.real)
+        newxy.append(v.imag)
+    c.coords(polygon_item, *newxy)
+
+c.bind("<Button-1>", press)
+c.bind("<B1-Motion>", motion)
+
+mainloop()
