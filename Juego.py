@@ -42,12 +42,12 @@ obstaculo1 = v.create_oval(50, 100, 150, 200, fill = "brown") # bola
 obstaculo2 = v.create_oval(70, 125, 125, 175, fill = "orange") # bola
 
 triangulo3 = v.create_polygon((0, 0, 0, 50, 100, 0), outline='black', fill="red")
-triangulo4 = v.create_polygon((600, 0, 600, 50, 700, 10), outline='black', fill="red")
+triangulo4 = v.create_polygon((600, 0, 700, 0, 500, 100), outline='black', fill="red")
 
 
     ############ BOTONES ###############
 
-guardar = Button(v,text="Guradar Partida", bg = "gray", font = ("Arial Rounded MT Bold", 15)). place(x = 750, y = 600)
+guardar = Button(v,text="Guardar Partida", bg = "gray", font = ("Arial Rounded MT Bold", 15)). place(x = 750, y = 600)
 
     ############# MOVER #####################
 
